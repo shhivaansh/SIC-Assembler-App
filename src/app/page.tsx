@@ -117,7 +117,6 @@ export default function SICAssembler() {
   };
 
   const pass2 = (listing: AssemblyLine[], symbols: SymbolTable) => {
-    //const objectCodes: string[] = [];
     const updatedListing = [...listing];
     const objectProgramLines: string[] = [];
     
@@ -223,9 +222,9 @@ export default function SICAssembler() {
       <div className="max-w-6xl mx-auto space-y-6">
         <Card className="shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-gray-800">SIC/XE Assembler</CardTitle>
+            <CardTitle className="text-2xl font-bold text-gray-800">SIC Assembler</CardTitle>
             <CardDescription className="text-gray-600">
-              A two-pass assembler for SIC/XE machine code
+              A two-pass assembler for SIC machine code
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -255,6 +254,10 @@ export default function SICAssembler() {
                 <Button onClick={assemble} className="w-full bg-blue-600 hover:bg-blue-700">
                   Assemble
                 </Button>
+              </div>
+              <div></div>
+              <div></div>
+              <div>
                 <Button onClick={resetForm} variant="outline" className="w-full">
                   Reset
                 </Button>
