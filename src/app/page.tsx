@@ -117,7 +117,7 @@ export default function SICAssembler() {
   };
 
   const pass2 = (listing: AssemblyLine[], symbols: SymbolTable) => {
-    const objectCodes: string[] = [];
+    //const objectCodes: string[] = [];
     const updatedListing = [...listing];
     const objectProgramLines: string[] = [];
     
