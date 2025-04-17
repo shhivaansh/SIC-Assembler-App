@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SIC Assembler App
 
-## Getting Started
+A web-based assembler for the **Simplified Instructional Computer (SIC)** architecture. This tool allows users to input SIC assembly code, perform Pass 1 and Pass 2 of the assembler process, and generate object code, symbol tables, and listing files—all from a user-friendly interface.
 
-First, run the development server:
+> 🌐 **Live Demo**: [https://sic-assembler-app.vercel.app](https://sic-assembler-app.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of Contents
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Assembler Workflow](#assembler-workflow)
+- [Screenshots](#screenshots)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+-  Input editor for SIC assembly programs
+-  Performs **Pass 1**: Symbol Table generation, location counters
+-  Performs **Pass 2**: Object code and listing file generation
+-  Displays symbol table, intermediate file, and object program
+-  Validates instructions and generates errors for invalid input
+-  Fully web-based—no installation required for use
+-  Responsive, clean UI using Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/) – React-based framework for SSR and SSG
+- [TypeScript](https://www.typescriptlang.org/) – Type-safe JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS for styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- npm (comes with Node.js)
+
+## Project Structure
+The folder structure of the app is designed to be modular and easy to scale. Below is a visual representation:
+![image](https://github.com/user-attachments/assets/f43f7b5f-24f7-41ee-b68e-8d44c505c42d)
+
+
+
+## Assembler Workflow
+The app simulates a two-pass SIC assembler:
+
+### Pass 1:
+- Reads each line of the program
+- Assigns location counter (LOCCTR)
+- Creates the symbol table (SYMTAB)
+- Produces intermediate file
+
+### Pass 2:
+- Uses the intermediate file and SYMTAB
+- Generates object code and handles address resolution
+- Outputs:
+  - Object Program
+  - Listing File
+
+
+## Screenshots
+<img width="1440" alt="Screenshot 2025-04-17 at 11 45 12 AM" src="https://github.com/user-attachments/assets/f896d3a1-f0cc-44be-8bd6-58d9aff8b103" />
+<img width="1440" alt="Screenshot 2025-04-17 at 11 45 20 AM" src="https://github.com/user-attachments/assets/c21cac2e-83f3-4452-97dc-8e853a5fd305" />
+<img width="1440" alt="Screenshot 2025-04-17 at 11 45 32 AM" src="https://github.com/user-attachments/assets/dea3748e-2498-4953-9291-cc0785f393e1" />
+<img width="1440" alt="Screenshot 2025-04-17 at 11 45 43 AM" src="https://github.com/user-attachments/assets/e67fdee6-8da6-4945-9bbb-2f79df1ea2aa" />
+
+
